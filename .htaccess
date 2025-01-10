@@ -1,0 +1,15 @@
+AddDefaultCharset Off
+
+ErrorDocument 404 "404 Not Found"
+ErrorDocument 403 /error.php
+
+RewriteBase /
+RewriteEngine on
+
+RewriteRule ^auth/?$ /modules/users/auth.php [L]
+RewriteRule ^reg/?$ /modules/users/reg.php [L]
+RewriteRule ^logout/?$ /modules/users/logout.php [L]
+RewriteRule ^returned/?$ /modules/users/returned.php [L]
+
+RewriteRule ^tasks/?$ /modules/tasks/all.php [L]
+RewriteRule ^tasks/(.*?)/?$ /modules/tasks/$1.php [L]
